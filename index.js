@@ -21,19 +21,17 @@ app.post('/generate-pdf', (_req, res) => {
     .fontSize(20)
     .text("Invoice", 50, 35, { align: "center" });
   doc
-    .image("logo.png", 50, 45, { width: 50 })
+    .image("logo.png", 50, 55, { width: 50 })
     .fillColor("#444444")
     .fontSize(20)
-    .text("ACME Inc.", 110, 57)
-    .fontSize(10)
-    .text("Azeem Badshah.", 200, 50, { align: "right" })
-    .text("123 Main Street", 200, 65, { align: "right" })
-    .text("New York, NY, 10025", 200, 80, { align: "right" })
+    .text("Azeem Badshah.", 200, 60, { align: "right" })
+    .text("123 Main Street", 200, 75, { align: "right" })
+    .text("New York, NY, 10025", 200, 90, { align: "right" })
     .moveDown();
   doc
     .fillColor("#444444")
     .fontSize(24).font("Helvetica-Bold")
-    .text("AL NOOR CABLE MERCHANT", 50, 160, { align: "center" });
+    .text("AL NOOR CABLE MERCHANT", 50, 130, { align: "center" });
 
 
   doc
