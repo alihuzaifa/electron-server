@@ -99,7 +99,7 @@ app.post('/generate-pdf', (_req, res) => {
     subtotalPosition,
     "",
     "",
-    "Subtotal",
+    "Total",
     "",
     formatCurrency(invoice.subtotal)
   );
