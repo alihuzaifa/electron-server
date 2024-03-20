@@ -21,7 +21,7 @@ app.post('/generate-pdf', (_req, res) => {
     .fontSize(20)
     .text("Invoice", 50, 30, { align: "center" });
   doc
-    .image("logo.png", 50, 55, { width: 50 })
+    .image("logo.png", 50, 55, { width: 100 })
     .fillColor("#444444")
     .fontSize(10)
     .text("Azeem Badshah.", 200, 60, { align: "right" })
