@@ -64,7 +64,7 @@ app.post('/generate-pdf', (_req, res) => {
     .lineTo(550, 252)
     .stroke();
   let i;
-  const invoiceTableTop = 330;
+  const invoiceTableTop = 300;
 
   doc.font("Helvetica-Bold");
   generateTableRow(
