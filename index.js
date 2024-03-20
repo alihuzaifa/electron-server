@@ -40,7 +40,8 @@ const invoice = {
 };
 // Define a route to generate PDF
 
-app.get('/generate-pdf', (_req, res) => {
+app.post('/generate-pdf', (_req, res) => {
+  const invoice = _req?.body
   const doc = new PDFDocument();
   res.setHeader('Content-Type', 'application/pdf');
   res.setHeader('Content-Disposition', 'attachment; filename="generated-pdf.pdf"');
