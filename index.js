@@ -84,7 +84,6 @@ app.post('/generate-pdf', (_req, res) => {
     doc,
     invoiceTableTop,
     "Item",
-    "Description",
     "Unit Cost",
     "Quantity",
     "Line Total"
@@ -99,7 +98,6 @@ app.post('/generate-pdf', (_req, res) => {
       doc,
       position,
       item.item,
-      item.description,
       formatCurrency(item.amount / item.quantity),
       item.quantity,
       formatCurrency(item.amount)
