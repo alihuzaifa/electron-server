@@ -49,7 +49,9 @@ app.post('/generate-pdf', (_req, res) => {
     .font("Helvetica")
     .text("Phone Number:", 50, customerInformationTop + 15)
     .text("0311-1260357", 150, customerInformationTop + 15)
-
+    .text("Name", 50, customerInformationTop)
+    .font("Helvetica-Bold")
+    .text("Ali Huzaifa", 150, customerInformationTop)
     .font("Helvetica-Bold")
     .text("Invoice No:", 300, customerInformationTop)
     .text("123456", 450, customerInformationTop + 15)
