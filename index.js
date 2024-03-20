@@ -38,7 +38,7 @@ app.post('/generate-pdf', (_req, res) => {
     .text(
       "Power Cable, Electric Cable, Welding Cable, Internet Cable, Heat-Proof Cable & Water-Proof Cable",
       50,
-      145,
+      150,
       { align: "center", width: 500 }
     );
 
