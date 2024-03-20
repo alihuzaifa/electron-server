@@ -11,35 +11,6 @@ app.use(bodyParser.urlencoded({ limit: "10mb", extended: false }));
 app.use(bodyParser.json({ limit: "10mb" }));
 app.use(bodyParser.urlencoded({ limit: "10mb", extended: false }));
 const port = 3000;
-const invoice = {
-  shipping: {
-    name: "John Doe",
-    address: "1234 Main Street",
-    city: "San Francisco",
-    state: "CA",
-    country: "US",
-    postal_code: 94111
-  },
-  items: [
-    {
-      item: "TC 100",
-      description: "Toner Cartridge",
-      quantity: 2,
-      amount: 6000
-    },
-    {
-      item: "USB_EXT",
-      description: "USB Cable Extender",
-      quantity: 1,
-      amount: 2000
-    }
-  ],
-  subtotal: 8000,
-  paid: 0,
-  invoice_nr: 1234
-};
-// Define a route to generate PDF
-
 app.post('/generate-pdf', (_req, res) => {
   const invoice = _req?.body
   const doc = new PDFDocument();
