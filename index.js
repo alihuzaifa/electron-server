@@ -23,7 +23,7 @@ app.post('/generate-pdf', (_req, res) => {
   doc
     .image("logo.png", 50, 55, { width: 50 })
     .fillColor("#444444")
-    .fontSize(20)
+    .fontSize(10)
     .text("Azeem Badshah.", 200, 60, { align: "right" })
     .text("123 Main Street", 200, 75, { align: "right" })
     .text("New York, NY, 10025", 200, 90, { align: "right" })
