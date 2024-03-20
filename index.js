@@ -43,27 +43,19 @@ app.post('/generate-pdf', (_req, res) => {
 
   doc
     .fontSize(10)
-    .text("Name", 50, customerInformationTop)
     .font("Helvetica-Bold")
+    .text("Name", 50, customerInformationTop)
     .text("Ali Huzaifa", 150, customerInformationTop)
-    .font("Helvetica")
+    .font("Helvetica-Bold")
     .text("Phone Number:", 50, customerInformationTop + 15)
     .text("0311-1260357", 150, customerInformationTop + 15)
 
     .font("Helvetica-Bold")
     .text("Invoice No:", 300, customerInformationTop)
     .text("123456", 450, customerInformationTop)
-    .font("Helvetica")
-    .text(invoice.shipping.address, 300, customerInformationTop + 15)
-    .text(
-      invoice.shipping.city +
-      ", " +
-      invoice.shipping.state +
-      ", " +
-      invoice.shipping.country,
-      300,
-      customerInformationTop + 30
-    )
+    .font("Helvetica-Bold")
+    .text("Date:", 300, customerInformationTop + 15)
+    .text("12/1/2024", 450, customerInformationTop + 15)
     .moveDown();
   doc
     .strokeColor("#aaaaaa")
