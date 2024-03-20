@@ -23,7 +23,7 @@ app.post('/generate-pdf', (_req, res) => {
     .fontSize(20)
     .text("ACME Inc.", 110, 57)
     .fontSize(10)
-    .text("ACME Inc.", 200, 50, { align: "right" })
+    .text("Azeem Badshah.", 200, 50, { align: "right" })
     .text("123 Main Street", 200, 65, { align: "right" })
     .text("New York, NY, 10025", 200, 80, { align: "right" })
     .moveDown();
@@ -33,7 +33,7 @@ app.post('/generate-pdf', (_req, res) => {
     .text("AL NOOR CABLE MERCHANT", 50, 160, { align: "center" });
   doc.fillColor("#444444")
     .fontSize(20)
-    .text("Invoice", 50, 160, { align: "center" });
+    .text("Invoice", 50, 185, { align: "center" });
 
   doc
     .strokeColor("#aaaaaa")
