@@ -103,34 +103,11 @@ app.post('/generate-pdf', (_req, res) => {
     "",
     formatCurrency(invoice.subtotal)
   );
-
-  // const paidToDatePosition = subtotalPosition + 20;
-  // generateTableRow(
-  //   doc,
-  //   paidToDatePosition,
-  //   "",
-  //   "",
-  //   "Paid To Date",
-  //   "",
-  //   formatCurrency(invoice.paid)
-  // );
-
-  // const duePosition = paidToDatePosition + 25;
-  // doc.font("Helvetica-Bold");
-  // generateTableRow(
-  //   doc,
-  //   duePosition,
-  //   "",
-  //   "",
-  //   "Balance Due",
-  //   "",
-  //   formatCurrency(invoice.subtotal - invoice.paid)
-  // );
   doc.font("Helvetica");
   doc
     .fontSize(10)
     .text(
-      "Payment is due within 15 days. Thank you for your business.",
+      "Shop # 8, Subhan Allah Market, Near MashaAllah Godown, Dargah Road, Kabari Bazar, Shershah Karachi.",
       50,
       700,
       { align: "center", width: 500 }
