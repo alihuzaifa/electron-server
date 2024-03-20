@@ -29,6 +29,9 @@ app.post('/generate-pdf', (_req, res) => {
     .moveDown();
   doc
     .fillColor("#444444")
+    .fontSize(20).font("Helvetica-Bold")
+    .text("AL NOOR CABLE MERCHANT", 50, 160, { align: "center" });
+  doc.fillColor("#444444")
     .fontSize(20)
     .text("Invoice", 50, 160, { align: "center" });
 
