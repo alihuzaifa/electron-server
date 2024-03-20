@@ -117,28 +117,28 @@ app.post('/generate-pdf', (_req, res) => {
     formatCurrency(invoice.subtotal)
   );
 
-  const paidToDatePosition = subtotalPosition + 20;
-  generateTableRow(
-    doc,
-    paidToDatePosition,
-    "",
-    "",
-    "Paid To Date",
-    "",
-    formatCurrency(invoice.paid)
-  );
+  // const paidToDatePosition = subtotalPosition + 20;
+  // generateTableRow(
+  //   doc,
+  //   paidToDatePosition,
+  //   "",
+  //   "",
+  //   "Paid To Date",
+  //   "",
+  //   formatCurrency(invoice.paid)
+  // );
 
-  const duePosition = paidToDatePosition + 25;
-  doc.font("Helvetica-Bold");
-  generateTableRow(
-    doc,
-    duePosition,
-    "",
-    "",
-    "Balance Due",
-    "",
-    formatCurrency(invoice.subtotal - invoice.paid)
-  );
+  // const duePosition = paidToDatePosition + 25;
+  // doc.font("Helvetica-Bold");
+  // generateTableRow(
+  //   doc,
+  //   duePosition,
+  //   "",
+  //   "",
+  //   "Balance Due",
+  //   "",
+  //   formatCurrency(invoice.subtotal - invoice.paid)
+  // );
   doc.font("Helvetica");
   doc
     .fontSize(10)
