@@ -17,6 +17,9 @@ app.post('/generate-pdf', (_req, res) => {
   res.setHeader('Content-Type', 'application/pdf');
   res.setHeader('Content-Disposition', 'attachment; filename="generated-pdf.pdf"');
   doc.pipe(res);
+  doc.fillColor("#444444")
+    .fontSize(20)
+    .text("Invoice", 50, 185, { align: "center" });
   doc
     .image("logo.png", 50, 45, { width: 50 })
     .fillColor("#444444")
@@ -31,9 +34,7 @@ app.post('/generate-pdf', (_req, res) => {
     .fillColor("#444444")
     .fontSize(24).font("Helvetica-Bold")
     .text("AL NOOR CABLE MERCHANT", 50, 160, { align: "center" });
-  doc.fillColor("#444444")
-    .fontSize(20)
-    .text("Invoice", 50, 185, { align: "center" });
+
 
   doc
     .strokeColor("#aaaaaa")
