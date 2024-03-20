@@ -83,10 +83,10 @@ app.post('/generate-pdf', (_req, res) => {
   generateTableRow(
     doc,
     invoiceTableTop,
-    "Item",
-    "Unit Cost",
+    "Item Detail",
     "Quantity",
-    "Line Total"
+    "Price",
+    "Total"
   );
   generateHr(doc, invoiceTableTop + 20);
   doc.font("Helvetica");
@@ -98,8 +98,8 @@ app.post('/generate-pdf', (_req, res) => {
       doc,
       position,
       item.item,
-      formatCurrency(item.amount / item.quantity),
       item.quantity,
+      formatCurrency(item.amount / item.quantity),
       formatCurrency(item.amount)
     );
 
