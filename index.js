@@ -87,6 +87,7 @@ app.post('/generate-pdf', (_req, res) => {
     doc,
     invoiceTableTop,
     "Item Detail",
+    "",
     "Quantity",
     "Price",
     "Total"
@@ -101,6 +102,7 @@ app.post('/generate-pdf', (_req, res) => {
       doc,
       position,
       item.item,
+      "",
       item.quantity,
       formatCurrency(item.amount / item.quantity),
       formatCurrency(item.amount)
@@ -113,6 +115,7 @@ app.post('/generate-pdf', (_req, res) => {
   generateTableRow(
     doc,
     subtotalPosition,
+    "",
     "",
     "",
     "Total",
