@@ -96,7 +96,7 @@ app.post('/generate-pdf', (_req, res) => {
 
   for (i = 0; i < invoice.items.length; i++) {
     const item = invoice.items[i];
-    const position = invoiceTableTop + (i + 1) * 30;
+    const position = invoiceTableTop + (i + 1) * 40;
     generateTableRow(
       doc,
       position,
