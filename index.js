@@ -35,12 +35,12 @@ app.post('/generate-pdf', (_req, res) => {
   doc.font("Helvetica");
 
   doc
-    .fontSize(10)
+    .fontSize(10).font("Helvetica")
     .text(
       "Power Cable, Electric Cable, Welding Cable, Internet Cable, Heat-Proof Cable & Water-Proof Cable",
       50,
       130,
-      { align: "center", width: 500 }
+      { align: "center" }
     );
 
   // doc
