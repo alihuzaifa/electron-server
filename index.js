@@ -150,12 +150,12 @@ app.post('/generate-pdf', (_req, res) => {
   const lineSize = 174;
   const signatureHeight = 390;
   // const endLine3 = startLine3 + lineSize;
-
+ 
   const endLine2 = 128
     + 174 + 32 + lineSize
-  doc
-    .moveTo(128 + 174 + 32, signatureHeight + 100)
-    .lineTo(endLine2, signatureHeight + 100)
+    doc
+    .moveTo(128 + 174 + 32, signatureHeight + 300)
+    .lineTo(endLine2, signatureHeight + 300)
     .stroke();
   doc.end();
 });
