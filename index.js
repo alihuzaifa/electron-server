@@ -79,20 +79,20 @@ app.post('/generate-pdf', (_req, res) => {
     .stroke();
 
 
-  // let i;
-  // const invoiceTableTop = 300;
+  let i;
+  const invoiceTableTop = 300;
 
-  // doc.font("Helvetica-Bold");
-  // generateTableRow(
-  //   doc,
-  //   invoiceTableTop,
-  //   "Item Detail",
-  //   "Quantity",
-  //   "Price",
-  //   "Total"
-  // );
-  // generateHr(doc, invoiceTableTop + 20);
-  // doc.font("Helvetica");
+  doc.font("Helvetica-Bold");
+  generateTableRow(
+    doc,
+    invoiceTableTop,
+    "Item Detail",
+    "Quantity",
+    "Price",
+    "Total"
+  );
+  generateHr(doc, invoiceTableTop + 20);
+  doc.font("Helvetica");
 
   // for (i = 0; i < invoice.items.length; i++) {
   //   const item = invoice.items[i];
