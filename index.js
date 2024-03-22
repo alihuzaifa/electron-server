@@ -163,17 +163,22 @@ app.post('/generate-pdf', (_req, res) => {
       align: 'center',
     });
 
-  // doc
-  //   .font('Helvetica')
-  //   .fontSize(10)
-  //   .fill('#021c27')
-  //   .text('Director', startLine3, signatureHeight + 25, {
-  //     columns: 1,
-  //     columnGap: 0,
-  //     height: 40,
-  //     width: lineSize,
-  //     align: 'center',
-  //   });
+  doc
+    .font('Helvetica')
+    .fontSize(10)
+    .fill('#021c27')
+    .text('Director', startLine3, signatureHeight + 25, {
+      columns: 1,
+      columnGap: 0,
+      height: 40,
+      width: lineSize,
+      align: 'center',
+    });
+  doc
+    .moveTo(128
+      + 174 + 32, signatureHeight)
+    .lineTo(endLine2, signatureHeight)
+    .stroke();
   doc.end();
 });
 
