@@ -74,8 +74,8 @@ app.post('/generate-pdf', (_req, res) => {
   doc
     .strokeColor("#aaaaaa")
     .lineWidth(1)
-    .moveTo(50, 232)
-    .lineTo(550, 232)
+    .moveTo(50, 212)
+    .lineTo(550, 212)
     .stroke();
 
 
