@@ -47,10 +47,10 @@ app.post('/generate-pdf', (_req, res) => {
     .strokeColor("#aaaaaa")
     .lineWidth(1)
     .moveTo(50, 150)
-    .lineTo(550, 185)
+    .lineTo(550, 150)
     .stroke();
 
-  const customerInformationTop = 200;
+  const customerInformationTop = 170;
 
   doc
     .fontSize(10)
