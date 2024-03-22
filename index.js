@@ -174,6 +174,8 @@ app.post('/generate-pdf', (_req, res) => {
       width: lineSize,
       align: 'center',
     });
+  const endLine2 = 128
+    + 174 + 32 + lineSize
   doc
     .moveTo(128
       + 174 + 32, signatureHeight)
