@@ -18,21 +18,21 @@ app.post('/generate-pdf', (_req, res) => {
   res.setHeader('Content-Disposition', 'attachment; filename="generated-pdf.pdf"');
   doc.pipe(res);
   doc.fillColor("#444444")
-    .fontSize(10).font("Helvetica-Bold")
+    .fontSize(12).font("Helvetica-Bold")
     .text("Invoice", 50, 30, { align: "center" });
-  // doc
-  //   .image("logo.png", 50, 55, { width: 100 })
-  //   .fillColor("#444444")
-  //   .fontSize(10)
-  //   .text("Azeem Badshah.", 200, 60, { align: "right" })
-  //   .text("123 Main Street", 200, 75, { align: "right" })
-  //   .text("New York, NY, 10025", 200, 90, { align: "right" })
-  //   .moveDown();
-  // doc
-  //   .fillColor("#444444")
-  //   .fontSize(20).font("Helvetica-Bold")
-  //   .text("AL NOOR CABLE MERCHANT", 50, 130, { align: "center" });
-  // doc.font("Helvetica");
+  doc
+    .image("logo.png", 50, 45, { width: 80 })
+    .fillColor("#444444")
+    .fontSize(10)
+    .text("Azeem Badshah.", 200, 50, { align: "right" })
+    .text("123 Main Street", 200, 65, { align: "right" })
+    .text("New York, NY, 10025", 200, 70, { align: "right" })
+    .moveDown();
+  doc
+    .fillColor("#444444")
+    .fontSize(20).font("Helvetica-Bold")
+    .text("AL NOOR CABLE MERCHANT", 50, 130, { align: "center" });
+  doc.font("Helvetica");
   // doc
   //   .fontSize(10)
   //   .text(
