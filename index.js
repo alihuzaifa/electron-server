@@ -132,7 +132,6 @@ app.post('/generate-pdf', (_req, res) => {
       align: 'center',
     });
 
-  jumpLine(doc, 4);
   // doc
   //   .fontSize(10)
   //   .text(
