@@ -128,7 +128,7 @@ app.post('/generate-pdf', (_req, res) => {
     .text(
       "Shop # 8, Subhan Allah Market, Near MashaAllah Godown, Dargah Road, Kabari Bazar, Shershah Karachi.",
       50,
-      675,
+      650,
       { align: "center", width: 500 }
     );
   doc
@@ -142,7 +142,7 @@ app.post('/generate-pdf', (_req, res) => {
   doc
     .fontSize(10)
     .text(
-      "Thank you for purchase",
+      "Signature",
       50,
       705,
       { align: "right", width: 500 }
@@ -154,7 +154,7 @@ app.post('/generate-pdf', (_req, res) => {
   const endLine2 = 128
     + 174 + 32 + lineSize
     doc
-    .moveTo(128 + 174 + 32, signatureHeight + 300)
+    .moveTo(128 + 174 + 60, signatureHeight + 300)
     .lineTo(endLine2, signatureHeight + 300)
     .stroke();
   doc.end();
