@@ -96,7 +96,7 @@ app.post('/generate-pdf', (_req, res) => {
 
   for (i = 0; i < invoice.items.length; i++) {
     const item = invoice.items[i];
-    const position = invoiceTableTop + (i + 1) * 40;
+    const position = invoiceTableTop + (i + 1) * 30;
     generateTableRow(
       doc,
       position,
@@ -116,8 +116,8 @@ app.post('/generate-pdf', (_req, res) => {
     "",
     "",
     "Total",
+    formatCurrency(invoice.subtotal),
     "",
-    formatCurrency(invoice.subtotal)
   );
   doc.font("Helvetica");
   doc
