@@ -136,7 +136,7 @@ app.post('/generate-pdf', (_req, res) => {
     .text(
       "Thank you for purchase",
       50,
-      700,
+      705,
       { align: "left", width: 500 }
     );
   doc
@@ -144,7 +144,7 @@ app.post('/generate-pdf', (_req, res) => {
     .text(
       "Thank you for purchase",
       50,
-      700,
+      705,
       { align: "right", width: 500 }
     );
   // const lineSize = 174;
