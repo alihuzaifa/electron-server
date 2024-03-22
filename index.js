@@ -122,7 +122,7 @@ app.post('/generate-pdf', (_req, res) => {
   //     700,
   //     { align: "center", width: 500 }
   //   );
-  // doc.end();
+  doc.end();
 });
 
 // Start the server
