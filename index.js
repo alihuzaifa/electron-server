@@ -18,7 +18,7 @@ app.post('/generate-pdf', (_req, res) => {
   res.setHeader('Content-Disposition', 'attachment; filename="generated-pdf.pdf"');
   doc.pipe(res);
   doc.fillColor("#444444")
-    .fontSize(20)
+    .fontSize(10).font("Helvetica-Bold")
     .text("Invoice", 50, 30, { align: "center" });
   // doc
   //   .image("logo.png", 50, 55, { width: 100 })
