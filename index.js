@@ -23,10 +23,10 @@ app.post('/generate-pdf', (_req, res) => {
   doc
     .image("logo.png", 50, 45, { width: 80 })
     .fillColor("#444444")
-    .fontSize(10)
+    .fontSize(10).font("Helvetica")
     .text("Azeem Badshah.", 200, 50, { align: "right" })
     .text("123 Main Street", 200, 65, { align: "right" })
-    .text("New York, NY, 10025", 200, 70, { align: "right" })
+    .text("New York, NY, 10025", 200, 80, { align: "right" })
     .moveDown();
   doc
     .fillColor("#444444")
@@ -35,49 +35,104 @@ app.post('/generate-pdf', (_req, res) => {
   doc.font("Helvetica");
   const lineSize = 174;
   const signatureHeight = 390;
-  doc.lineWidth(1);
+
   doc.fillAndStroke('#021c27');
   doc.strokeOpacity(0.2);
+
   const startLine1 = 128;
   const endLine1 = 128 + lineSize;
-  // Creates a line
   doc
     .moveTo(startLine1, signatureHeight)
     .lineTo(endLine1, signatureHeight)
     .stroke();
-  // Evaluator info
+
+  const startLine2 = endLine1 + 32;
+  const endLine2 = startLine2 + lineSize;
+  doc
+    .moveTo(startLine2, signatureHeight)
+    .lineTo(endLine2, signatureHeight)
+    .stroke();
+
+  const startLine3 = endLine2 + 32;
+  const endLine3 = startLine3 + lineSize;
+  doc
+    .moveTo(startLine3, signatureHeight)
+    .lineTo(endLine3, signatureHeight)
+    .stroke();
+
   doc
     .font('Helvetica-Bold')
     .fontSize(10)
     .fill('#021c27')
-    .text(
-      'John Doe',
-      startLine1,
-      signatureHeight + 10,
-      {
-        columns: 1,
-        columnGap: 0,
-        height: 40,
-        width: lineSize,
-        align: 'center',
-      }
-    );
+    .text('John Doe', startLine1, signatureHeight + 10, {
+      columns: 1,
+      columnGap: 0,
+      height: 40,
+      width: lineSize,
+      align: 'center',
+    });
+
   doc
     .font('Helvetica')
     .fontSize(10)
     .fill('#021c27')
-    .text(
-      'Associate Professor',
-      startLine1,
-      signatureHeight + 25,
-      {
-        columns: 1,
-        columnGap: 0,
-        height: 40,
-        width: lineSize,
-        align: 'center',
-      }
-    );
+    .text('Associate Professor', startLine1, signatureHeight + 25, {
+      columns: 1,
+      columnGap: 0,
+      height: 40,
+      width: lineSize,
+      align: 'center',
+    });
+
+  doc
+    .font('Helvetica-Bold')
+    .fontSize(10)
+    .fill('#021c27')
+    .text('Student Name', startLine2, signatureHeight + 10, {
+      columns: 1,
+      columnGap: 0,
+      height: 40,
+      width: lineSize,
+      align: 'center',
+    });
+
+  doc
+    .font('Helvetica')
+    .fontSize(10)
+    .fill('#021c27')
+    .text('Student', startLine2, signatureHeight + 25, {
+      columns: 1,
+      columnGap: 0,
+      height: 40,
+      width: lineSize,
+      align: 'center',
+    });
+
+  doc
+    .font('Helvetica-Bold')
+    .fontSize(10)
+    .fill('#021c27')
+    .text('Jane Doe', startLine3, signatureHeight + 10, {
+      columns: 1,
+      columnGap: 0,
+      height: 40,
+      width: lineSize,
+      align: 'center',
+    });
+
+  doc
+    .font('Helvetica')
+    .fontSize(10)
+    .fill('#021c27')
+    .text('Director', startLine3, signatureHeight + 25, {
+      columns: 1,
+      columnGap: 0,
+      height: 40,
+      width: lineSize,
+      align: 'center',
+    });
+
+  jumpLine(doc, 4);
   // doc
   //   .fontSize(10)
   //   .text(
