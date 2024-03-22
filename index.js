@@ -80,7 +80,7 @@ app.post('/generate-pdf', (_req, res) => {
 
 
   let i;
-  const invoiceTableTop = 220;
+  const invoiceTableTop = 225;
 
   doc.font("Helvetica-Bold");
   generateTableRow(
@@ -94,20 +94,20 @@ app.post('/generate-pdf', (_req, res) => {
   generateHr(doc, invoiceTableTop + 20);
   doc.font("Helvetica");
 
-  // for (i = 0; i < invoice.items.length; i++) {
-  //   const item = invoice.items[i];
-  //   const position = invoiceTableTop + (i + 1) * 30;
-  //   generateTableRow(
-  //     doc,
-  //     position,
-  //     item.item,
-  //     item.quantity,
-  //     formatCurrency(item.amount / item.quantity),
-  //     formatCurrency(item.amount)
-  //   );
+  for (i = 0; i < invoice.items.length; i++) {
+    const item = invoice.items[i];
+    const position = invoiceTableTop + (i + 1) * 30;
+    generateTableRow(
+      doc,
+      position,
+      item.item,
+      item.quantity,
+      formatCurrency(item.amount / item.quantity),
+      formatCurrency(item.amount)
+    );
 
-  //   generateHr(doc, position + 20);
-  // }
+    generateHr(doc, position + 20);
+  }
 
   // const subtotalPosition = invoiceTableTop + (i + 1) * 30;
   // generateTableRow(
