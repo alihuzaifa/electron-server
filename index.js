@@ -128,7 +128,7 @@ app.post('/generate-pdf', (_req, res) => {
     .text(
       "Shop # 8, Subhan Allah Market, Near MashaAllah Godown, Dargah Road, Kabari Bazar, Shershah Karachi.",
       50,
-      680,
+      675,
       { align: "center", width: 500 }
     );
   doc
@@ -136,7 +136,7 @@ app.post('/generate-pdf', (_req, res) => {
     .text(
       "Thank you for purchase",
       50,
-      710,
+      700,
       { align: "left", width: 500 }
     );
   doc
@@ -144,7 +144,7 @@ app.post('/generate-pdf', (_req, res) => {
     .text(
       "Thank you for purchase",
       50,
-      710,
+      700,
       { align: "right", width: 500 }
     );
   // const lineSize = 174;
