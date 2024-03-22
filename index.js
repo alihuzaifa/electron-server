@@ -80,7 +80,7 @@ app.post('/generate-pdf', (_req, res) => {
 
 
   let i;
-  const invoiceTableTop = 200;
+  const invoiceTableTop = 220;
 
   doc.font("Helvetica-Bold");
   generateTableRow(
