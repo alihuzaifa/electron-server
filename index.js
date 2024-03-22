@@ -33,6 +33,51 @@ app.post('/generate-pdf', (_req, res) => {
     .fontSize(20).font("Helvetica-Bold")
     .text("AL NOOR CABLE MERCHANT", 50, 130, { align: "center" });
   doc.font("Helvetica");
+  const lineSize = 174;
+  const signatureHeight = 390;
+  doc.lineWidth(1);
+  doc.fillAndStroke('#021c27');
+  doc.strokeOpacity(0.2);
+  const startLine1 = 128;
+  const endLine1 = 128 + lineSize;
+  // Creates a line
+  doc
+    .moveTo(startLine1, signatureHeight)
+    .lineTo(endLine1, signatureHeight)
+    .stroke();
+  // Evaluator info
+  doc
+    .font('Helvetica-Bold')
+    .fontSize(10)
+    .fill('#021c27')
+    .text(
+      'John Doe',
+      startLine1,
+      signatureHeight + 10,
+      {
+        columns: 1,
+        columnGap: 0,
+        height: 40,
+        width: lineSize,
+        align: 'center',
+      }
+    );
+  doc
+    .font('Helvetica')
+    .fontSize(10)
+    .fill('#021c27')
+    .text(
+      'Associate Professor',
+      startLine1,
+      signatureHeight + 25,
+      {
+        columns: 1,
+        columnGap: 0,
+        height: 40,
+        width: lineSize,
+        align: 'center',
+      }
+    );
   // doc
   //   .fontSize(10)
   //   .text(
