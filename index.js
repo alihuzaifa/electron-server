@@ -149,36 +149,12 @@ app.post('/generate-pdf', (_req, res) => {
     );
   const lineSize = 174;
   const signatureHeight = 390;
-  const startLine3 = 172 + 32;
   // const endLine3 = startLine3 + lineSize;
-  doc
-    .font('Helvetica-Bold')
-    .fontSize(10)
-    .fill('#021c27')
-    .text('Jane Doe', startLine3, signatureHeight + 10, {
-      columns: 1,
-      columnGap: 0,
-      height: 40,
-      width: lineSize,
-      align: 'center',
-    });
-
-  doc
-    .font('Helvetica')
-    .fontSize(10)
-    .fill('#021c27')
-    .text('Director', startLine3, signatureHeight + 25, {
-      columns: 1,
-      columnGap: 0,
-      height: 40,
-      width: lineSize,
-      align: 'center',
-    });
+ 
   const endLine2 = 128
     + 174 + 32 + lineSize
   doc
-    .moveTo(128
-      + 174 + 32, signatureHeight)
+    .moveTo(400, 700)
     .lineTo(endLine2, signatureHeight)
     .stroke();
   doc.end();
