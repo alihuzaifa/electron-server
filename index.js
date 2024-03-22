@@ -109,25 +109,25 @@ app.post('/generate-pdf', (_req, res) => {
     generateHr(doc, position + 20);
   }
 
-  // const subtotalPosition = invoiceTableTop + (i + 1) * 30;
-  // generateTableRow(
-  //   doc,
-  //   subtotalPosition,
-  //   "",
-  //   "",
-  //   "Total",
-  //   "",
-  //   formatCurrency(invoice.subtotal)
-  // );
-  // doc.font("Helvetica");
-  // doc
-  //   .fontSize(10)
-  //   .text(
-  //     "Shop # 8, Subhan Allah Market, Near MashaAllah Godown, Dargah Road, Kabari Bazar, Shershah Karachi.",
-  //     50,
-  //     700,
-  //     { align: "center", width: 500 }
-  //   );
+  const subtotalPosition = invoiceTableTop + (i + 1) * 30;
+  generateTableRow(
+    doc,
+    subtotalPosition,
+    "",
+    "",
+    "Total",
+    "",
+    formatCurrency(invoice.subtotal)
+  );
+  doc.font("Helvetica");
+  doc
+    .fontSize(10)
+    .text(
+      "Shop # 8, Subhan Allah Market, Near MashaAllah Godown, Dargah Road, Kabari Bazar, Shershah Karachi.",
+      50,
+      700,
+      { align: "center", width: 500 }
+    );
   doc.end();
 });
 
