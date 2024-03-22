@@ -132,7 +132,13 @@ app.post('/generate-pdf', (_req, res) => {
       { align: "center", width: 500 }
     );
   doc
-    .fontSize(10).font("Helvetica").text("Thank you for purchase", 50, 45, { align: "right" });
+    .fontSize(10)
+    .text(
+      "Thank you for purchase",
+      50,
+      720,
+      { align: "left", width: 500 }
+    );
   // const lineSize = 174;
   // const signatureHeight = 390;
   // // const startLine3 = endLine2 + 32;
