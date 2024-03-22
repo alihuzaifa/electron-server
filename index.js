@@ -152,9 +152,9 @@ app.post('/generate-pdf', (_req, res) => {
   // const endLine3 = startLine3 + lineSize;
  
   const endLine2 = 128
-    + 174 + 32 + lineSize
+    + 174 + 120 + lineSize
     doc
-    .moveTo(128 + 174 + 60, signatureHeight + 300)
+    .moveTo(128 + 174 + 120, signatureHeight + 300)
     .lineTo(endLine2, signatureHeight + 300)
     .stroke();
   doc.end();
