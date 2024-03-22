@@ -30,7 +30,7 @@ app.post('/generate-pdf', (_req, res) => {
     .moveDown();
   doc
     .fillColor("#444444")
-    .fontSize(16).font("Helvetica-Bold")
+    .fontSize(14).font("Helvetica-Bold")
     .text("AL NOOR CABLE MERCHANT", 50, 110, { align: "center" });
   doc.font("Helvetica");
 
