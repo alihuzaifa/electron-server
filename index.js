@@ -31,7 +31,7 @@ app.post('/generate-pdf', (_req, res) => {
   doc
     .fillColor("#444444")
     .fontSize(16).font("Helvetica-Bold")
-    .text("AL NOOR CABLE MERCHANT", 50, 100, { align: "center" });
+    .text("AL NOOR CABLE MERCHANT", 50, 110, { align: "center" });
   doc.font("Helvetica");
 
   doc
@@ -39,7 +39,7 @@ app.post('/generate-pdf', (_req, res) => {
     .text(
       "Power Cable, Electric Cable, Welding Cable, Internet Cable, Heat-Proof Cable & Water-Proof Cable",
       50,
-      115,
+      130,
       { align: "center", width: 500 }
     );
 
