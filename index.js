@@ -68,14 +68,14 @@ app.post('/generate-pdf', (_req, res) => {
     .text("Invoice No:", 300, customerInformationTop);
   doc.font('Helvetica').fontSize(10).text("123456", 450, customerInformationTop)
   doc.font("Helvetica-Bold").fontSize(10)
-    .text("Date:", 300, customerInformationTop + 15)
-    .text("12/1/2024", 450, customerInformationTop + 15)
+    .text("Date:", 300, customerInformationTop + 15);
+  doc.font("Helvetica").fontSize(10).text("12/1/2024", 450, customerInformationTop + 15)
     .moveDown();
   doc
     .strokeColor("#aaaaaa")
     .lineWidth(1)
-    .moveTo(50, 252)
-    .lineTo(550, 252)
+    .moveTo(50, 232)
+    .lineTo(550, 232)
     .stroke();
 
 
