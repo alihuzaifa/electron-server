@@ -57,8 +57,8 @@ app.post('/generate-pdf', (_req, res) => {
     .font("Helvetica-Bold")
     .text("Name", 50, customerInformationTop);
 
-  // doc.text("Ali Huzaifa", 150, customerInformationTop).font('Helvetica').fontSize(10);
-  doc.font('Helvetica').fontSize(10).text("Ali Huzaifa", 150, customerInformationTop + 15)
+  doc.font('Helvetica').fontSize(10).text("Ali Huzaifa", 150, customerInformationTop);
+  // doc.font('Helvetica').fontSize(10).text("Ali Huzaifa", 150, customerInformationTop + 15)
 
   doc.font("Helvetica-Bold").fontSize(10)
     .text("Phone Number:", 50, customerInformationTop + 15)
