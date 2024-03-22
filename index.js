@@ -30,19 +30,18 @@ app.post('/generate-pdf', (_req, res) => {
     .moveDown();
   doc
     .fillColor("#444444")
-    .fontSize(20).font("Helvetica-Bold")
-    .text("AL NOOR CABLE MERCHANT", 50, 130, { align: "center" });
+    .fontSize(16).font("Helvetica-Bold")
+    .text("AL NOOR CABLE MERCHANT", 50, 100, { align: "center" });
   doc.font("Helvetica");
 
-
-  // doc
-  //   .fontSize(10)
-  //   .text(
-  //     "Power Cable, Electric Cable, Welding Cable, Internet Cable, Heat-Proof Cable & Water-Proof Cable",
-  //     50,
-  //     150,
-  //     { align: "center", width: 500 }
-  //   );
+  doc
+    .fontSize(10)
+    .text(
+      "Power Cable, Electric Cable, Welding Cable, Internet Cable, Heat-Proof Cable & Water-Proof Cable",
+      50,
+      115,
+      { align: "center", width: 500 }
+    );
 
   // doc
   //   .strokeColor("#aaaaaa")
