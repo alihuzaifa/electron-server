@@ -131,6 +131,33 @@ app.post('/generate-pdf', (_req, res) => {
       700,
       { align: "center", width: 500 }
     );
+  doc
+    .fontSize(10).font("Helvetica").text("Thank you for purchase", 50, 45, { align: "right" });
+  const lineSize = 174;
+  const signatureHeight = 390;
+  doc
+    .font('Helvetica-Bold')
+    .fontSize(10)
+    .fill('#021c27')
+    .text('Jane Doe', startLine3, signatureHeight + 10, {
+      columns: 1,
+      columnGap: 0,
+      height: 40,
+      width: lineSize,
+      align: 'center',
+    });
+
+  doc
+    .font('Helvetica')
+    .fontSize(10)
+    .fill('#021c27')
+    .text('Director', startLine3, signatureHeight + 25, {
+      columns: 1,
+      columnGap: 0,
+      height: 40,
+      width: lineSize,
+      align: 'center',
+    });
   doc.end();
 });
 
