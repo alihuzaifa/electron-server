@@ -62,21 +62,21 @@ app.post('/generate-pdf', (_req, res) => {
 
   doc.font("Helvetica-Bold").fontSize(10)
     .text("Phone Number:", 50, customerInformationTop + 15)
-  doc.font('Helvetica').fontSize(10).text("0311-1260357", 150, customerInformationTop + 15)
+  doc.font('Helvetica').fontSize(10).text("0311-1260357", 150, customerInformationTop + 15);
 
-  // .font("Helvetica-Bold")
-  // .text("Invoice No:", 300, customerInformationTop)
-  // .text("123456", 450, customerInformationTop)
-  // .font("Helvetica-Bold")
-  // .text("Date:", 300, customerInformationTop + 15)
-  // .text("12/1/2024", 450, customerInformationTop + 15)
-  // .moveDown();
-  // doc
-  //   .strokeColor("#aaaaaa")
-  //   .lineWidth(1)
-  //   .moveTo(50, 252)
-  //   .lineTo(550, 252)
-  //   .stroke();
+  doc.font("Helvetica-Bold")
+    .text("Invoice No:", 300, customerInformationTop);
+  doc.font('Helvetica').fontSize(10).text("123456", 450, customerInformationTop)
+  doc.font("Helvetica-Bold").fontSize(10)
+    .text("Date:", 300, customerInformationTop + 15)
+    .text("12/1/2024", 450, customerInformationTop + 15)
+    .moveDown();
+  doc
+    .strokeColor("#aaaaaa")
+    .lineWidth(1)
+    .moveTo(50, 252)
+    .lineTo(550, 252)
+    .stroke();
 
 
   // let i;
