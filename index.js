@@ -18,12 +18,12 @@ app.post('/generate-pdf', (_req, res) => {
   res.setHeader('Content-Disposition', 'attachment; filename="generated-pdf.pdf"');
   doc.pipe(res);
   doc.fillColor("#444444")
-    .fontSize(12).font("Helvetica-Bold")
+    .fontSize(12).font("./fonts/LilitaOne-Regular.ttf")
     .text(invoice.heading, 50, 30, { align: "center" });
   doc
     .image("logo.png", 50, 45, { width: 80 })
     .fillColor("#444444")
-    .fontSize(10).font("./fonts/LilitaOne-Regular.ttf")
+    .fontSize(10).font("Helvetica")
     .text("Azeem Badshah", 400, 50)
     .text(invoice.number1, 400, 65)
     .text(invoice.number2, 400, 80)
@@ -33,11 +33,12 @@ app.post('/generate-pdf', (_req, res) => {
     .moveDown();
   doc
     .fillColor("#444444")
-    .fontSize(16).font("./fonts/LilitaOne-Regular.ttf")
+    .fontSize(14).font("./fonts/Shrikhand-Regular.ttf")
     .text(invoice.shopName, 50, 110, { align: "center" });
+  doc.font("Helvetica");
 
   doc
-    .fontSize(10).font("./fonts/LilitaOne-Regular.ttf")
+    .fontSize(10).font("Helvetica")
     .text(
       invoice.shopDescription,
       50,
@@ -56,21 +57,21 @@ app.post('/generate-pdf', (_req, res) => {
 
   doc
     .fontSize(10)
-    .font("Helvetica-Bold")
+    .font("./fonts/LilitaOne-Regular.ttf")
     .text("Name", 50, customerInformationTop);
 
-  doc.font('./fonts/LilitaOne-Regular.ttf').fontSize(10).text(invoice.name, 150, customerInformationTop);
+  doc.font('Helvetica').fontSize(10).text(invoice.name, 150, customerInformationTop);
 
-  doc.font("Helvetica-Bold").fontSize(10)
+  doc.font("./fonts/LilitaOne-Regular.ttf").fontSize(10)
     .text("Phone Number:", 50, customerInformationTop + 15)
-  doc.font('./fonts/LilitaOne-Regular.ttf').fontSize(10).text(invoice.phone, 150, customerInformationTop + 15);
+  doc.font('Helvetica').fontSize(10).text(invoice.phone, 150, customerInformationTop + 15);
 
-  doc.font("Helvetica-Bold")
+  doc.font("./fonts/LilitaOne-Regular.ttf")
     .text("Invoice No:", 300, customerInformationTop);
-  doc.font('./fonts/LilitaOne-Regular.ttf').fontSize(10).text(invoice.invoice_nr, 450, customerInformationTop)
-  doc.font("Helvetica-Bold").fontSize(10)
+  doc.font('Helvetica').fontSize(10).text(invoice.invoice_nr, 450, customerInformationTop)
+  doc.font("./fonts/LilitaOne-Regular.ttf").fontSize(10)
     .text("Date:", 300, customerInformationTop + 15);
-  doc.font("./fonts/LilitaOne-Regular.ttf").fontSize(10).text(invoice.date, 450, customerInformationTop + 15)
+  doc.font("Helvetica").fontSize(10).text(invoice.date, 450, customerInformationTop + 15)
     .moveDown();
   doc
     .strokeColor("#aaaaaa")
@@ -83,7 +84,7 @@ app.post('/generate-pdf', (_req, res) => {
   let i;
   const invoiceTableTop = 225;
 
-  doc.font("Helvetica-Bold");
+  doc.font("./fonts/LilitaOne-Regular.ttf");
   generateTableRow(
     doc,
     invoiceTableTop,
@@ -94,7 +95,7 @@ app.post('/generate-pdf', (_req, res) => {
     "Total"
   );
   generateHr(doc, invoiceTableTop + 20);
-  doc.font("./fonts/LilitaOne-Regular.ttf");
+  doc.font("Helvetica");
 
   for (i = 0; i < invoice.items.length; i++) {
     const item = invoice.items[i];
@@ -123,7 +124,7 @@ app.post('/generate-pdf', (_req, res) => {
     invoice.items?.reduce((acc, { totalPrice }) => acc + totalPrice, 0).toLocaleString() ?? 0,
     "",
   );
-  doc.font("./fonts/LilitaOne-Regular.ttf");
+  doc.font("Helvetica");
   doc
     .fontSize(10)
     .text(
