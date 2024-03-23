@@ -151,7 +151,6 @@ app.post('/generate-pdf', (_req, res) => {
     .stroke();
   doc.end();
 });
-
 // Start the server
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
