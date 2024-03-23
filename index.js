@@ -42,7 +42,7 @@ app.post('/generate-pdf', (_req, res) => {
     .text(
       invoice.shopDescription,
       50,
-      135,
+      140,
       { align: "center" }
     );
 
