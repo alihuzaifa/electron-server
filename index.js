@@ -34,7 +34,7 @@ app.post('/generate-pdf', (_req, res) => {
   doc
     .fillColor("#444444")
     .fontSize(16).font("./fonts/Shrikhand-Regular.ttf")
-    .text(invoice.shopName, 50, 110, { align: "center" });
+    .text(invoice.shopName, 50, 115, { align: "center" });
   doc.font("./fonts/LibreFranklin-SemiBoldItalic.ttf");
 
   doc
@@ -42,15 +42,15 @@ app.post('/generate-pdf', (_req, res) => {
     .text(
       invoice.shopDescription,
       50,
-      130,
+      135,
       { align: "center" }
     );
 
   doc
     .strokeColor("#aaaaaa")
     .lineWidth(1)
-    .moveTo(50, 150)
-    .lineTo(550, 150)
+    .moveTo(50, 160)
+    .lineTo(550, 160)
     .stroke();
 
   const customerInformationTop = 180;
