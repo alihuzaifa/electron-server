@@ -130,7 +130,7 @@ app.post('/generate-pdf', (_req, res) => {
     .text(
       invoice.shopAddress,
       50,
-      635,
+      625,
       { align: "center", width: 500 }
     );
   doc
@@ -138,7 +138,7 @@ app.post('/generate-pdf', (_req, res) => {
     .text(
       "Thank you for purchase",
       50,
-      705,
+      695,
       { align: "left", width: 500 }
     );
   doc
