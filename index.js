@@ -24,9 +24,12 @@ app.post('/generate-pdf', (_req, res) => {
     .image("logo.png", 50, 45, { width: 80 })
     .fillColor("#444444")
     .fontSize(10).font("Helvetica")
-    .text("Azeem Badshah.", 200, 50, { align: "right" })
-    .text(invoice.number1, 200, 65, { align: "right" })
-    .text(invoice.number2, 200, 80, { align: "right" })
+    .text("Azeem Badshah", 165, 50, { align: "right" })
+    .text(invoice.number1, 165, 65, { align: "right" })
+    .text(invoice.number2, 165, 80, { align: "right" })
+    .text("Hamza", 200, 50, { align: "right" })
+    .text(invoice.number3, 200, 65, { align: "right" })
+    .text(invoice.number4, 200, 80, { align: "right" })
     .moveDown();
   doc
     .fillColor("#444444")
