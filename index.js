@@ -33,7 +33,7 @@ app.post('/generate-pdf', (_req, res) => {
     .moveDown();
   doc
     .fillColor("#444444")
-    .fontSize(14).font("./fonts/LilitaOne-Regular.ttf")
+    .fontSize(16).font("./fonts/LilitaOne-Regular.ttf")
     .text(invoice.shopName, 50, 110, { align: "center" });
 
   doc
