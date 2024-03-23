@@ -146,7 +146,7 @@ app.post('/generate-pdf', (_req, res) => {
     .text(
       "Signature",
       50,
-      708,
+      700,
       { align: "right", width: 500 }
     );
   const lineSize = 174;
