@@ -25,8 +25,8 @@ app.post('/generate-pdf', (_req, res) => {
     .fillColor("#444444")
     .fontSize(10).font("Helvetica")
     .text("Azeem Badshah.", 200, 50, { align: "right" })
-    .text("123 Main Street", 200, 65, { align: "right" })
-    .text("New York, NY, 10025", 200, 80, { align: "right" })
+    .text(invoice.number1, 200, 65, { align: "right" })
+    .text(invoice.number2, 200, 80, { align: "right" })
     .moveDown();
   doc
     .fillColor("#444444")
