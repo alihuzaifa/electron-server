@@ -27,9 +27,9 @@ app.post('/generate-pdf', (_req, res) => {
     .text("Azeem Badshah", 115, 50, { align: "right" })
     .text(invoice.number1, 115, 65, { align: "right" })
     .text(invoice.number2, 115, 80, { align: "right" })
-    .text("Hamza", 200, 50, { align: "right" })
-    .text(invoice.number3, 200, 65, { align: "right" })
-    .text(invoice.number4, 200, 80, { align: "right" })
+    .text("Hamza", 200, 50)
+    .text(invoice.number3, 200, 65)
+    .text(invoice.number4, 200, 80)
     .moveDown();
   doc
     .fillColor("#444444")
