@@ -128,7 +128,7 @@ app.post('/generate-pdf', (_req, res) => {
     .text(
       "Shop # 8, Subhan Allah Market, Near MashaAllah Godown, Dargah Road, Kabari Bazar, Shershah Karachi.",
       50,
-      650,
+      640,
       { align: "center", width: 500 }
     );
   doc
