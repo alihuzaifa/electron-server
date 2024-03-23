@@ -95,8 +95,7 @@ app.post('/generate-pdf', (_req, res) => {
     "Total"
   );
   // generateHr(doc, invoiceTableTop + 20);
-  // doc.font("./fonts/LibreFranklin-SemiBoldItalic.ttf");
-
+  doc.font("./fonts/LibreFranklin-SemiBoldItalic.ttf").fillColor('black');
   for (i = 0; i < invoice.items.length; i++) {
     const item = invoice.items[i];
     const position = invoiceTableTop + (i + 1) * 30;
@@ -108,7 +107,7 @@ app.post('/generate-pdf', (_req, res) => {
       item.sellingQuantity,
       item.sellingPrice.toLocaleString(),
       item?.totalPrice.toLocaleString()
-    ).fillColor('black');
+    );
 
     generateHr(doc, position + 20);
   }
