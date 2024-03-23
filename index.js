@@ -82,7 +82,7 @@ app.post('/generate-pdf', (_req, res) => {
 
 
   let i;
-  const invoiceTableTop = 235;
+  const invoiceTableTop = 245;
 
   doc.font("./fonts/LilitaOne-Regular.ttf").rect(50, invoiceTableTop - 10, 500, 30).fill('black').fillColor('white');
   generateTableRow(
