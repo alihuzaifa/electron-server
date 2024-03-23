@@ -53,7 +53,7 @@ app.post('/generate-pdf', (_req, res) => {
     .lineTo(550, 150)
     .stroke();
 
-  const customerInformationTop = 170;
+  const customerInformationTop = 180;
 
   doc
     .fontSize(10)
@@ -73,13 +73,6 @@ app.post('/generate-pdf', (_req, res) => {
     .text("Date:", 300, customerInformationTop + 15);
   doc.font("./fonts/LibreFranklin-SemiBoldItalic.ttf").fontSize(10).text(invoice.date, 450, customerInformationTop + 15)
     .moveDown();
-  doc
-    .strokeColor("#aaaaaa")
-    .lineWidth(1)
-    .moveTo(50, 212)
-    .lineTo(550, 212)
-    .stroke();
-
 
   let i;
   const invoiceTableTop = 245;
