@@ -19,7 +19,7 @@ app.post('/generate-pdf', (_req, res) => {
   doc.pipe(res);
   doc.fillColor("#444444")
     .fontSize(12).font("Helvetica-Bold")
-    .text("Invoice", 50, 30, { align: "center" });
+    .text(invoice.heading, 50, 30, { align: "center" });
   doc
     .image("logo.png", 50, 45, { width: 80 })
     .fillColor("#444444")
@@ -31,13 +31,13 @@ app.post('/generate-pdf', (_req, res) => {
   doc
     .fillColor("#444444")
     .fontSize(14).font("Helvetica-Bold")
-    .text("AL NOOR CABLE MERCHANT", 50, 110, { align: "center" });
+    .text(invoice.shopName, 50, 110, { align: "center" });
   doc.font("Helvetica");
 
   doc
     .fontSize(10).font("Helvetica")
     .text(
-      "Power Cable, Electric Cable, Welding Cable, Internet Cable, Heat-Proof Cable & Water-Proof Cable",
+      invoice.shopDescription,
       50,
       130,
       { align: "center" }
@@ -126,7 +126,7 @@ app.post('/generate-pdf', (_req, res) => {
   doc
     .fontSize(10)
     .text(
-      "Shop # 8, Subhan Allah Market, Near MashaAllah Godown, Dargah Road, Kabari Bazar, Shershah Karachi.",
+      invoice.shopAddress,
       50,
       635,
       { align: "center", width: 500 }
@@ -150,10 +150,10 @@ app.post('/generate-pdf', (_req, res) => {
   const lineSize = 174;
   const signatureHeight = 390;
   // const endLine3 = startLine3 + lineSize;
- 
+
   const endLine2 = 128
     + 174 + 120 + lineSize
-    doc
+  doc
     .moveTo(128 + 174 + 120, signatureHeight + 300)
     .lineTo(endLine2, signatureHeight + 300)
     .stroke();
