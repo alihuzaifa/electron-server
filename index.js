@@ -57,19 +57,18 @@ app.post('/generate-pdf', (_req, res) => {
     .font("Helvetica-Bold")
     .text("Name", 50, customerInformationTop);
 
-  doc.font('Helvetica').fontSize(10).text("Ali Huzaifa", 150, customerInformationTop);
-  // doc.font('Helvetica').fontSize(10).text("Ali Huzaifa", 150, customerInformationTop + 15)
+  doc.font('Helvetica').fontSize(10).text(invoice.name, 150, customerInformationTop);
 
   doc.font("Helvetica-Bold").fontSize(10)
     .text("Phone Number:", 50, customerInformationTop + 15)
-  doc.font('Helvetica').fontSize(10).text("0311-1260357", 150, customerInformationTop + 15);
+  doc.font('Helvetica').fontSize(10).text(invoice.phone, 150, customerInformationTop + 15);
 
   doc.font("Helvetica-Bold")
     .text("Invoice No:", 300, customerInformationTop);
-  doc.font('Helvetica').fontSize(10).text("123456", 450, customerInformationTop)
+  doc.font('Helvetica').fontSize(10).text(invoice.invoice_nr, 450, customerInformationTop)
   doc.font("Helvetica-Bold").fontSize(10)
     .text("Date:", 300, customerInformationTop + 15);
-  doc.font("Helvetica").fontSize(10).text("12/1/2024", 450, customerInformationTop + 15)
+  doc.font("Helvetica").fontSize(10).text(invoice.date, 450, customerInformationTop + 15)
     .moveDown();
   doc
     .strokeColor("#aaaaaa")
@@ -101,11 +100,11 @@ app.post('/generate-pdf', (_req, res) => {
     generateTableRow(
       doc,
       position,
-      item.item,
+      item?.name?.label,
       "",
-      item.quantity,
-      formatCurrency(item.amount / item.quantity),
-      formatCurrency(item.amount)
+      item.sellingQuantity,
+      item.sellingPrice.toLocaleString(),
+      item?.totalPrice.toLocaleString()
     );
 
     generateHr(doc, position + 20);
@@ -119,7 +118,7 @@ app.post('/generate-pdf', (_req, res) => {
     "",
     "",
     "Total",
-    formatCurrency(invoice.subtotal),
+    invoice.items?.reduce((acc, { totalPrice }) => acc + totalPrice, 0).toLocaleString() ?? 0,
     "",
   );
   doc.font("Helvetica");
