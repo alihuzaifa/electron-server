@@ -149,7 +149,6 @@ app.post('/generate-pdf', (_req, res) => {
     );
   const lineSize = 174;
   const signatureHeight = 390;
-  // const endLine3 = startLine3 + lineSize;
  
   const endLine2 = 128
     + 174 + 120 + lineSize
