@@ -94,7 +94,6 @@ app.post('/generate-pdf', (_req, res) => {
     "Price",
     "Total"
   );
-  // generateHr(doc, invoiceTableTop + 20);
   doc.font("./fonts/LibreFranklin-SemiBoldItalic.ttf").fillColor('black');
   for (i = 0; i < invoice.items.length; i++) {
     const item = invoice.items[i];
