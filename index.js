@@ -108,7 +108,7 @@ app.post('/generate-pdf', (_req, res) => {
       item.sellingQuantity,
       item.sellingPrice.toLocaleString(),
       item?.totalPrice.toLocaleString()
-    );
+    ).fillColor('black');
 
     generateHr(doc, position + 20);
   }
