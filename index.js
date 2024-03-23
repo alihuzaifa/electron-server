@@ -144,11 +144,12 @@ app.post('/generate-pdf', (_req, res) => {
     .text(
       "Signature",
       50,
-      710,
+      708,
       { align: "right", width: 500 }
     );
   const lineSize = 174;
   const signatureHeight = 390;
+  // const endLine3 = startLine3 + lineSize;
  
   const endLine2 = 128
     + 174 + 120 + lineSize
