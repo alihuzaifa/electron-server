@@ -19,7 +19,7 @@ app.post('/generate-pdf', (_req, res) => {
   doc.pipe(res);
   doc.fillColor("#444444")
     .fontSize(12).font("./fonts/LilitaOne-Regular.ttf")
-    .text(invoice.heading, 50, 30, { align: "center" });
+    .text(invoice.heading, 50, 20, { align: "center" });
   doc
     .image("logo.png", 50, 45, { width: 80 })
     .fillColor("#444444")
